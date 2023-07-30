@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fish Species Prediction</title>
+</head>
+<body>
+    <h1>Fish Species Prediction</h1>
+    <form action="/predict" method="post">
+        {% if error_message %}
+        <p style="color: red;">{{ error_message }}</p>
+        {% endif %}
+        <p>Weight: <input type="text" name="input1" required></p>
+        <p>Length1: <input type="text" name="input2" required></p>
+        <p>Length2: <input type="text" name="input3" required></p>
+        <p>Length3: <input type="text" name="input4" required></p>
+        <p>Height: <input type="text" name="input5" required></p>
+        <p>Width: <input type="text" name="input6" required></p>
+        <input type="submit" value="Predict">
+    </form>
+    {% if prediction %}
+    <h2>Species: {{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
